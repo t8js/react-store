@@ -2,7 +2,7 @@
 
 React app state management condensed to the essentials
 
-**Features:** Quickest migration from local state&nbsp;&middot; Familiar useState pattern&nbsp;&middot; CSR/SSR without workarounds&nbsp;&middot; Integrable with Immer&nbsp;&middot; Quickly pluggable persistence across page reloads
+**Features:** Quickest migration from local state&nbsp;&middot; Single pattern for shared and local state&nbsp;&middot; CSR/SSR without workarounds&nbsp;&middot; Integrable with Immer&nbsp;&middot; Quickly pluggable persistence across page reloads
 
 <!-- docsgen-show-start --
 ```diff

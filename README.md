@@ -2,8 +2,6 @@
 
 React app state management condensed to the essentials
 
-[![npm](https://img.shields.io/npm/v/@t8/react-store?labelColor=345&color=46e)](https://www.npmjs.com/package/@t8/react-store) ![Lightweight](https://img.shields.io/bundlephobia/minzip/@t8/react-store?label=minzip&labelColor=345&color=46e)
-
 **Features:** Quickest migration from local state&nbsp;&middot; Familiar useState pattern&nbsp;&middot; CSR/SSR without workarounds&nbsp;&middot; Integrable with Immer&nbsp;&middot; Quickly pluggable persistence across page reloads
 
 <!-- docsgen-show-start --
@@ -22,8 +20,6 @@ React app state management condensed to the essentials
   };
 ```
 -- docsgen-show-end -->
-
-Installation: `npm i @t8/react-store`
 
 ## Shared state setup
 

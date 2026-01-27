@@ -1,6 +1,6 @@
 {
   "name": "@t8/react-store",
-  "version": "1.2.9",
+  "version": "1.2.10",
   "description": "React app state management condensed to the essentials",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

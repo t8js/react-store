@@ -52,10 +52,7 @@ export function useStore<T>(
     if (!shouldUpdate) return;
 
     let unsubscribe = store.on("update", ({ current, previous }) => {
-      if (
-        typeof shouldUpdate !== "function" ||
-        shouldUpdate(current, previous)
-      )
+      if (typeof shouldUpdate !== "function" || shouldUpdate(current, previous))
         setRevision(Math.random());
     });
 

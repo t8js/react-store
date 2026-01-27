@@ -1,4 +1,4 @@
-import { isPersistentStore, isStore, type Store } from "@t8/store";
+import { isStore, type Store } from "@t8/store";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 export type SetStoreValue<T> = Store<T>["setValue"];
@@ -46,14 +46,15 @@ export function useStore<T>(
   let initialStoreRevision = useRef(store.revision);
 
   useEffect(() => {
-    if (isPersistentStore<T>(store)) store.syncOnce();
+    // Allow stores to hook into the effect
+    store.emit("effect");
 
     if (!shouldUpdate) return;
 
-    let unsubscribe = store.onUpdate((nextValue, prevValue) => {
+    let unsubscribe = store.on("update", ({ current, previous }) => {
       if (
         typeof shouldUpdate !== "function" ||
-        shouldUpdate(nextValue, prevValue)
+        shouldUpdate(current, previous)
       )
         setRevision(Math.random());
     });

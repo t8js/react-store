@@ -173,14 +173,14 @@ A standalone store initialized outside a component can be used by the component 
 
 ## Persistence across page reloads
 
-Replacing `new Store(data)` with `new PersistentStore(data, storageKey)` as shown below gets the store's value initially restored from and saved whenever updated to `storageKey` in `localStorage`. (Pass `{ session: true }` as the `options` parameter of `new PersistentStore(data, storageKey, options?)` to use `sessionStorage` instead of `localStorage`.) Otherwise, persistent stores work pretty much like regular stores described above.
+Replacing `new Store(data)` with `new PersistentStore(data, { key })` as shown below gets the store's value initially restored from and saved whenever updated to the specified `key` in `localStorage`. (Pass `session: true` to the second parameter of the constructor to use `sessionStorage` instead of `localStorage`.) Otherwise, persistent stores work pretty much like regular stores described above.
 
 ```js
-import { PersistentStore } from "@t8/react-store";
+import { PersistentStore } from "@t8/persistent-store";
 
-let counterStore = new PersistentStore(0, "counter");
+let counterStore = new PersistentStore(0, { key: "counter" });
 ```
 
-⬥ The way data gets saved to and restored from a browser storage entry (including filtering out certain data or otherwise rearranging the saved data) can be redefined by setting `options.serialize` and `options.deserialize` in `new PersistentStore(data, storageKey, options?)`. By default, these options act like `JSON.stringify()` and `JSON.parse()` respectively.
+⬥ The way data gets saved to and restored from a browser storage entry (including filtering out certain data or otherwise rearranging the saved data) can be redefined by setting `options.serialize` and `options.deserialize` in `new PersistentStore(data, options)`. By default, these options act like `JSON.stringify()` and `JSON.parse()` respectively.
 
 ⬥ `PersistentStore` skips interaction with the browser storage in non-browser environments, which makes it equally usable with SSR.

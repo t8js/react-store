@@ -55,8 +55,8 @@ Moving local state to the full-fledged shared state:
   let App = () => <><Counter/>{" "}<ResetButton/></>;
 ```
 
-[Live counter demo](https://codesandbox.io/p/sandbox/szhdnw?file=%252Fsrc%252FApp.tsx)<br>
-[Tic-tac-toe](https://codesandbox.io/p/sandbox/tq852v?file=%252Fsrc%252FApp.tsx)
+[Live counter demo](https://codesandbox.io/p/sandbox/szhdnw?file=%252Fsrc%252FApp.tsx&h=200)<br>
+[Tic-tac-toe](https://codesandbox.io/p/sandbox/tq852v?file=%252Fsrc%252FApp.tsx&h=380)
 
 ⬥ The shared state setup shown above is very similar to `useState()` allowing for quick migration from local state to shared state or the other way around.
 
@@ -126,7 +126,7 @@ Shared state can be provided to the app by means of a regular React Context prov
   );
 ```
 
-[Live counter demo with Context](https://codesandbox.io/p/sandbox/rtng37?file=%2Fsrc%2FPlusButton.jsx)
+[Live counter demo with Context](https://codesandbox.io/p/sandbox/rtng37?file=%2Fsrc%2FPlusButton.jsx&h=200)
 
 ⬥ In a multi-store setup, stores can be located in a single Context or split across multiple Contexts, just like any application data.
 
@@ -154,14 +154,14 @@ let ItemCard = ({ id }) => {
 A store can contain data of any kind, whether of a primitive type or nonprimitive.
 
 Live demos:<br>
-[Primitive value state](https://codesandbox.io/p/sandbox/rtng37?file=%2Fsrc%2FPlusButton.jsx)<br>
-[Object value state](https://codesandbox.io/p/sandbox/y7wt2j?file=%2Fsrc%2FPlusButton.jsx)
+[Primitive value state](https://codesandbox.io/p/sandbox/rtng37?file=%2Fsrc%2FPlusButton.jsx&h=200)<br>
+[Object value state](https://codesandbox.io/p/sandbox/y7wt2j?file=%2Fsrc%2FPlusButton.jsx&h=200)
 
 ## With Immer
 
 Immer can be used with `useStore()` just the same way as [with `useState()`](https://immerjs.github.io/immer/example-setstate#usestate--immer) to facilitate deeply nested data changes.
 
-[Live demo with Immer](https://codesandbox.io/p/sandbox/rn4qsr?file=%2Fsrc%2FPlusButton.jsx)
+[Live demo with Immer](https://codesandbox.io/p/sandbox/rn4qsr?file=%2Fsrc%2FPlusButton.jsx&h=200)
 
 ## Shared loading state
 
